@@ -8,7 +8,7 @@ require_once '../classes/Product.php';
 //connexion a la base de données 
 
 $database = new Database();
-$bd = $database->getConnection();
+$db = $database->getConnection();
 
 //instancier la classe Product 
 

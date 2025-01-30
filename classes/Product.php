@@ -17,7 +17,7 @@ class Product{
     //lire tous nos produits
 
     public function readAll(){
-        $allProducts = $this->conn->prepare("SELECT* FROM". $this->table ."ORDER BY created_at DESC");
+        $allProducts = $this->conn->prepare("SELECT * FROM ". $this->table ." ORDER BY created_at DESC");
         $allProducts->execute();
         return $allProducts;
     }
@@ -25,7 +25,7 @@ class Product{
     //Ajouter un produit
 
     public function create(){
-        $addProduct = $this->conn->prepare("INSERT INTO". $this->table ."(name,description,price) VALUES (:name, :description, :price)");
+        $addProduct = $this->conn->prepare(" INSERT INTO ". $this->table . "(name,description,price) VALUES (:name, :description, :price)");
 
         //protection contre les injection SQL
         $this->name = htmlspecialchars(strip_tags($this->name));
