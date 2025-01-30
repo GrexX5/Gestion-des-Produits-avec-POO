@@ -7,7 +7,7 @@ class Database {
     private $dbname = "product_management_db";
     public $conn;
 
-    public function getConnexion(){
+    public function getConnection(){
         $this->conn = null;
 
         try{

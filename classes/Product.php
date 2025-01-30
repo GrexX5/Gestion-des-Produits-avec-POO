@@ -10,7 +10,7 @@ class Product{
     public $description;
     public $price;
 
-    public function __condtuct($db){
+    public function __construct($db){
         $this->conn = $db;
     }
 
@@ -34,11 +34,11 @@ class Product{
 
         //binder les parametres
 
-        $allProducts->bindParam(":name", $this->name);
-        $allProducts->bindParam(":description", $this->description);
-        $allProducts->bindParam(":price", $this->price);
+        $addProduct->bindParam(":name", $this->name);
+        $addProduct->bindParam(":description", $this->description);
+        $addProduct->bindParam(":price", $this->price);
 
-        if($allProducts->execute()){return true;}
+        if($addProduct->execute()){return true;}
         return false;
 
 
